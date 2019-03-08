@@ -27,7 +27,6 @@ LeafNodesExamined = 0
 def minimax(root='A', depth=float('inf'), alpha=-float('inf'), beta=float('inf')):
   node = tree[root]
   if depth == 0:
-#     print("slkdfsklf")
     return -float('inf') if node['kind'] == 'MAX' else float('inf') 
   if node['has_child_node'] == False:
     global LeafNodesExamined
@@ -51,7 +50,7 @@ def minimax(root='A', depth=float('inf'), alpha=-float('inf'), beta=float('inf')
       Eval = minimax(child, depth-1, alpha, beta)
       minEval = min(minEval, Eval)
 #       print(minEval, Eval)
-      beta = min(minEval, Eval)
+      # beta = min(minEval, Eval)
 #       print(beta)
       beta = min(beta, Eval)
 #       print(beta)
