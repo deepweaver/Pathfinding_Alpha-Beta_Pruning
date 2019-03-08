@@ -34,7 +34,7 @@ def minimax(root='A', depth=float('inf'), alpha=-float('inf'), beta=float('inf')
     LeafNodesExamined += 2
     return max(node['children']) if node['kind'] == 'MAX' else min(node['children']) 
 
-  if kind == 'MAX':
+  if node['kind'] == 'MAX':
     maxEval = -float('inf')
     for child in node['children']:
       Eval = minimax(child, depth-1, alpha, beta)
