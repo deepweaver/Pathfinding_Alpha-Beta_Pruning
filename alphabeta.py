@@ -37,9 +37,7 @@ def minimax(root='A', depth=float('inf'), alpha=-float('inf'), beta=float('inf')
     maxEval = -float('inf')
     for child in node['children']:
       Eval = minimax(child, depth-1, alpha, beta)
-#       print(Eval, maxEval)
       maxEval = max(maxEval, Eval)
-#       print(alpha, Eval)
       alpha = max(alpha, Eval)
       if beta <= alpha:
         break 
@@ -49,11 +47,7 @@ def minimax(root='A', depth=float('inf'), alpha=-float('inf'), beta=float('inf')
     for child in node['children']:
       Eval = minimax(child, depth-1, alpha, beta)
       minEval = min(minEval, Eval)
-#       print(minEval, Eval)
-      # beta = min(minEval, Eval)
-#       print(beta)
       beta = min(beta, Eval)
-#       print(beta)
       if beta <= alpha:
         break
     return minEval 
